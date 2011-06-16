@@ -1,2 +1,6 @@
-*~
+# vim
+*.swo
 *.swp
+
+# osx
+*.DS_Store

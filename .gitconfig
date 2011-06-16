@@ -1,0 +1,12 @@
+[user]
+	name = Jakob Voss
+	email = jakob@nichtich.de
+
+[core]
+	excludesfile = "~/.gitignore"
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
