@@ -1,6 +1,6 @@
 [user]
 	name = Jakob Voss
-	email = jakob@nichtich.de
+	email = jakob@gbv.de
 
 [core]
 	excludesfile = "~/.gitignore"
