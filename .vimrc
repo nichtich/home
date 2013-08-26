@@ -1,16 +1,19 @@
 set nocompatible
 
-set autoindent
-" set smartindent
-
 " use 4 spaces instead of tabs
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set expandtab
 
-set visualbell " don't beep
+" don't beep
+set visualbell
 
 syntax on
+filetype plugin on
 
 " additional file types, based on file extensions
-au BufRead,BufNewFile *.pl,*.t set filetype=perl
+au BufRead,BufNewFile *.pl,*.t,.psgi set filetype=perl
 
+set autoindent
+" set smartindent
