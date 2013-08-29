@@ -1,12 +1,29 @@
+[core]
+	excludesfile = "~/.gitignore"
+    pager = less -r
+    editor = vim
+
 [user]
 	name = Jakob Voss
 	email = jakob@gbv.de
 
-[core]
-	excludesfile = "~/.gitignore"
-
 [color]
-	branch = auto
-	diff = auto
+    ui = auto
 	interactive = auto
-	status = auto
+
+[alias]
+    s = status --short -uno
+
+    l = log --oneline --decorate
+    ls = log --pretty=format:"%C(yellow)%h%\\ \\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%C(reset)" --decorate --date=short
+    la = log --pretty=format:"%C(yellow)%h%\\ \\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%C(reset)" --decorate --stat --date=short
+    graph = log --all --graph --decorate --oneline -n30
+
+    diff = diff --word-diff
+
+    # add to the last commit without changing commit message
+    amend = commit --amend --no-edit
+
+[diff]
+    # enable copy detection
+    renames = copies
