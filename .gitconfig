@@ -24,6 +24,9 @@
     # add to the last commit without changing commit message
     amend = commit --amend --no-edit
 
+    # track all remote branches and get all remote tags
+    trackall = !~/bin/git-trackall
+
 [diff]
     # enable copy detection
     renames = copies
