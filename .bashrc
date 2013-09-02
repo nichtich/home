@@ -79,8 +79,8 @@ LIGHT_MAGENTA="\[\033[1;35m\]"
 CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 
-if [ -f ~/.git-prompt.sh ]; then
-    . ~/.git-prompt.sh
+if [ -f ~/bin/git-prompt.sh ]; then
+    . ~/bin/git-prompt.sh
     GIT_PS1_SHOWDIRTYSTATE=true
     GIT_PS1_SHOWCOLORHINTS=true
 
