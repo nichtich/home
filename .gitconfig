@@ -17,8 +17,11 @@
     l = log --oneline --decorate
     ls = log --pretty=format:"%C(yellow)%h%\\ \\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%C(reset)" --decorate --date=short
     la = log --pretty=format:"%C(yellow)%h%\\ \\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%C(reset)" --decorate --stat --date=short
+
+    # show all commits and branches in a comprehensive overview.
     graph = log --all --graph --decorate --oneline -n30
 
+    # always use word-diff
     diff = diff --word-diff
 
     # add to the last commit without changing commit message
@@ -26,6 +29,9 @@
 
     # track all remote branches and get all remote tags
     trackall = !~/bin/git-trackall
+
+    # clone from a known user/repository at GitHub
+    ghclone = "!ghclone() { git clone git@github.com:$1.git; }; ghclone"
 
 [diff]
     # enable copy detection
