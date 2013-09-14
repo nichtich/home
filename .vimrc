@@ -1,5 +1,8 @@
 set nocompatible
 
+" use 256 colors
+set t_Co=256
+
 " enable vundle
 filetype on
 filetype off
@@ -9,6 +12,8 @@ call vundle#rc()
 " Bundles
 Bundle 'gmarik/vundle'
 Bundle 'vim-pandoc'
+Bundle 'bling/vim-airline'
+set laststatus=2
 
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " Syntax highlighting
@@ -28,4 +33,3 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
-

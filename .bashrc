@@ -7,8 +7,10 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # ... or force ignoredups and ignorespace
 export HISTCONTROL=ignoreboth
 
-# shell options
+# Enable history appending instead of overwriting.
 shopt -s histappend >/dev/null 2>&1
+
+# other shell options
 shopt -s hostcomplete >/dev/null 2>&1
 shopt -s no_empty_cmd_completion >/dev/null 2>&1
 
@@ -29,6 +31,7 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
 esac
 
 force_color_prompt=yes
