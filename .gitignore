@@ -4,3 +4,7 @@
 
 # osx
 *.DS_Store
+
+# don't track bundles but vundle. Call `vim +BundleInstall +qall` to install
+.vim/bundle/
+!.vim/bundle/vundle
