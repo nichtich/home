@@ -11,8 +11,10 @@ call vundle#rc()
 
 " Bundles
 Bundle 'gmarik/vundle'
-Bundle 'vim-pandoc'
 Bundle 'bling/vim-airline'
+Bundle 'vim-pandoc'
+Bundle 'scrooloose/syntastic'
+
 set laststatus=2
 
 filetype plugin indent on   " Automatically detect file types.
