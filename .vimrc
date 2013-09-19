@@ -37,3 +37,6 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
+" enable bash aliases
+let $BASH_ENV = "~/.bash_aliases"
