@@ -13,7 +13,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'vim-pandoc'
+
 Bundle 'scrooloose/syntastic'
+let g:syntastic_perl_lib_path="./lib,./local/lib/perl5"
 
 set laststatus=2
 
