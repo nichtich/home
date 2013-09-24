@@ -11,15 +11,21 @@
     ui = auto
 	interactive = auto
 
+[log]
+    # always include tags and references
+	decorate = full
+
 [alias]
     s = status --short -uno
 
-    l = log --oneline --decorate
-    ls = log --pretty=format:"%C(yellow)%h%\\ \\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%C(reset)" --decorate --date=short
-    la = log --pretty=format:"%C(yellow)%h%\\ \\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%C(reset)" --decorate --stat --date=short
+    l = log --oneline 
+    ls = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --date=short
+    la = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --stat
 
-    # show all commits and branches in a comprehensive overview.
-    graph = log --all --graph --decorate --oneline -n30
+    # show all commits and branches in a comprehensive overview (TODO: add author).
+    graph = log --all --graph --oneline -n30
+    
+    g = log --all --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative
 
     # always use word-diff
     diff = diff --word-diff
@@ -36,3 +42,5 @@
 [diff]
     # enable copy detection
     renames = copies
+
+
