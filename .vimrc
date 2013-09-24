@@ -11,8 +11,12 @@ call vundle#rc()
 
 " Bundles
 Bundle 'gmarik/vundle'
+
 Bundle 'bling/vim-airline'
+
 Bundle 'vim-pandoc'
+let g:pandoc_no_folding = 1
+let g:pandoc_use_hard_wraps = 1
 
 Bundle 'scrooloose/syntastic'
 let g:syntastic_perl_lib_path="./lib,./local/lib/perl5"
