@@ -21,6 +21,8 @@ let g:pandoc_use_hard_wraps = 1
 Bundle 'scrooloose/syntastic'
 let g:syntastic_perl_lib_path="./lib,./local/lib/perl5"
 
+Bundle 'rking/ag.vim'
+
 set laststatus=2
 
 filetype plugin indent on   " Automatically detect file types.
