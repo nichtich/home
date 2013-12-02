@@ -107,6 +107,9 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+
+[ -f ~/perl5/perlbrew/etc/bashrc ] && . ~/perl5/perlbrew/etc/bashrc
+
 ## PSI compilation
 #export FILEMAP=$HOME/confdir/FILEMAP
 #export SQSH=-Ukavia
