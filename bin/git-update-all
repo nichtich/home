@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# look at all subdirectories
+for DIR in `find -maxdepth 1 -type d`
+do
+    # git repository
+    if [ -d $DIR/.git ]
+    then
+        cd $DIR
+        if [ -n "$(git status --porcelain)" ];
+        then
+            # show status if uncommited changes
+            echo ":: $DIR"
+            git status -s
+        else
+            # try to sync with repmote otherwise
+            echo ":: $DIR"
+            git pull
+                # TODO: brief output for easy filtering
+        fi
+        cd ..
+
+    # no git repository
+    else
+        echo "-- $DIR"
+    fi
+done
