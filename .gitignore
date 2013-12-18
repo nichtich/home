@@ -8,3 +8,14 @@
 # don't track bundles but vundle. Call `vim +BundleInstall +qall` to install
 .vim/bundle/
 !.vim/bundle/vundle
+
+
+# repository bundle
+/proj
+
+# tracked by other means
+/music
+/img
+
+# depends on
+/public_html
