@@ -105,8 +105,12 @@ fi
 # sources /etc/bash.bashrc).
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
-# enable perlbrew if it exists
+# enable perlbrew (Perl development) if it exists
 [ -f ~/perl5/perlbrew/etc/bashrc ] && . ~/perl5/perlbrew/etc/bashrc
+
+# enable virtualenv (Python development) if it exists
+[ -f ~/.virtualenvs ] && export WORKON_HOME=~/.virtualenvs
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && . /usr/local/bin/virtualenvwrapper.sh
 
 ## PSI compilation
 #export FILEMAP=$HOME/confdir/FILEMAP
