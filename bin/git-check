@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# exit on error
+set -e
+
+# is this a working tree?
+GIT_DIR1=`cd "$(git rev-parse --git-dir)"; pwd; cd - > /dev/null`
+GIT_DIR2=`pwd`/.git
+
+if [ "$GIT_DIR1" != "$GIT_DIR2" ]; then
+    echo "no git directory: $GIT_DIR2"
+    exit 1
+fi
+
+# check status (without untracked files)
+STATUS=`git status -uno -s --ignore-submodules=untracked`
+if [ "$STATUS" ]; then
+    echo $STATUS
+    exit 1
+fi
+
+# check whether there is stashed content
+STASH=`git stash list`
+if [ "$STASH" ]; then
+    echo $STASH
+    exit 1
+fi
+
+# remove untracked and ignored files and directories & submodules
+DIRTY=`git clean -f -f -x -d -n`
+if [ "$DIRTY" ]; then
+    echo $DIRTY
+    exit 1
+fi
+
+# update remotes 
+git remote update
+
+# ...
+LANG=en_US.UTF git status --porcelain --branch
