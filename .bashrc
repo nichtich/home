@@ -113,9 +113,13 @@ fi
 [ -f ~/.virtualenvs ] && export WORKON_HOME=~/.virtualenvs
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && . /usr/local/bin/virtualenvwrapper.sh
 
-## PSI compilation
-#export FILEMAP=$HOME/confdir/FILEMAP
-#export SQSH=-Ukavia
-#export EDITOR=vim 
-#export TARGET_HOME=...
-#export PICAHOME=...
+# ruby as local user
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+# heroku toolbelt
+if [ -x /usr/local/heroku/bin/heroku ]; then
+    PATH="/usr/local/heroku/bin:$PATH"
+fi
+
