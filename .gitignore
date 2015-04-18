@@ -1,3 +1,19 @@
+# ignore all directories
+*/
+.*/
+
+# expect selected directories
+!.vim/
+!bin/
+
+# home directory: ignore selected files only
+/.bash_history
+/.ICEauthority
+/.Xauthority
+/.xsession-errors
+/.xsession-errors.old
+
+
 # vim
 *.swo
 *.swp
@@ -8,14 +24,3 @@
 # don't track bundles but vundle. Call `vim +BundleInstall +qall` to install
 .vim/bundle/
 !.vim/bundle/vundle
-
-
-# repository bundle
-/proj
-
-# tracked by other means
-/music
-/img
-
-# depends on
-/public_html
