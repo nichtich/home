@@ -21,6 +21,7 @@
 # osx
 *.DS_Store
 
-# don't track bundles but vundle. Call `vim +BundleInstall +qall` to install
+# don't track bundles but vundle. To install call
+# `git submodule update --init` and `vim +BundleInstall +qall`
 .vim/bundle/
 !.vim/bundle/vundle
