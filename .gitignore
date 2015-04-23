@@ -1,27 +1,36 @@
-# ignore all directories
-*/
-.*/
+# home directory
 
-# expect selected directories
-!.vim/
-!bin/
+## ignore all directories
+/*/
+/.*/
 
-# home directory: ignore selected files only
+## expect selected directories
+!/.vim/
+!/bin/
+
+## ignore selected files only
 /.bash_history
+/.sqlite_history
 /.ICEauthority
 /.Xauthority
 /.xsession-errors
 /.xsession-errors.old
 
+/.smbcredentials
+/.pause
 
-# vim
+## don't track bundles but vundle. To install call
+## `git submodule update --init` and `vim +BundleInstall +qall`
+/.vim/bundle/
+!/.vim/bundle/vundle
+
+
+# subdirectories
+
+## vim
 *.swo
 *.swp
 
-# osx
+## OSX
 *.DS_Store
 
-# don't track bundles but vundle. To install call
-# `git submodule update --init` and `vim +BundleInstall +qall`
-.vim/bundle/
-!.vim/bundle/vundle
