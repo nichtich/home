@@ -1,8 +1,7 @@
 # home directory
 
-## ignore all directories
-/*/
-/.*/
+## ignore selected directories
+/proj
 
 ## expect selected directories
 !/.vim/
@@ -16,6 +15,8 @@
 /.xsession-errors
 /.xsession-errors.old
 
+### credentials
+/.ssh/
 /.smbcredentials
 /.pause
 

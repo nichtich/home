@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+use Module::CPANfile;
+my $prereqs = Module::CPANfile->load->prereq_specs;
+exec 'dh-make-perl', 'locate', keys %{$prereqs->{runtime}->{requires}};
