@@ -1,4 +1,18 @@
 #!/usr/bin/perl
+
+# read perl modules as arguments or from ./cpanfile
 use Module::CPANfile;
-my $prereqs = Module::CPANfile->load->prereq_specs;
-exec 'dh-make-perl', 'locate', keys %{$prereqs->{runtime}->{requires}};
+my @modules = @ARGV ? @ARGV : do {
+    my $prereqs = Module::CPANfile->load->prereq_specs;
+    keys %{$prereqs->{runtime}->{requires}};
+};
+
+# locate Debian packages that include these modules 
+exit 1 unless @modules;
+my $cmd = join ' ', 'dh-make-perl', 'locate', @modules, '2>/dev/null';
+open my $fh, "-|", $cmd;
+foreach (<$fh>) {
+    # this ignore core packages
+    # see DhMakePerl::Command::locate for details
+    print "$1\t$2\n" if /(.+) is in (.+) package/;
+}
