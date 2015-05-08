@@ -17,7 +17,8 @@
 
 [alias]
     s = status --short -uno
-
+    co = checkout
+    br = branch
     l = log --oneline 
     ls = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --date=short
     la = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --stat
@@ -40,7 +41,7 @@
     ghclone = "!sh -c \"git clone git@github.com:$1/$2.git $GIT_PREFIX$2\""
 
     # show all unpushed work
-	unpushed = "!sh -c \"git status --short; git log --branches --not --remotes --simplify-by-decoration --decorate --oneline; git stash list\""
+	ok = "!sh -c \"git status --short; git log --branches --not --remotes --simplify-by-decoration --decorate --oneline; git stash list\""
 
 [diff]
     # enable copy detection
