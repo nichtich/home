@@ -126,3 +126,6 @@ if [ -x /usr/local/heroku/bin/heroku ]; then
     PATH="/usr/local/heroku/bin:$PATH"
 fi
 
+
+export DEBEMAIL="jakob.voss@gbv.de"
+export DEBFULLNAME="Jakob Voß"
