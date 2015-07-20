@@ -106,9 +106,6 @@ fi
 # sources /etc/bash.bashrc).
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
-# custom scripts
-[ -d ~/bin ] && PATH="~/bin:$PATH"
-
 # enable perlbrew (Perl development) if it exists
 [ -f ~/perl5/perlbrew/etc/bashrc ] && . ~/perl5/perlbrew/etc/bashrc
 
@@ -126,6 +123,8 @@ if [ -x /usr/local/heroku/bin/heroku ]; then
     PATH="/usr/local/heroku/bin:$PATH"
 fi
 
+# custom scripts
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
 export DEBEMAIL="jakob.voss@gbv.de"
 export DEBFULLNAME="Jakob Voß"
