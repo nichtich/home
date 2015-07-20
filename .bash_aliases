@@ -17,12 +17,5 @@ else
     alias la='ls -la'
 fi
 
-# ...
-function alwaysmake() {
-    while sleep 1 
-    do
-        TARGET="$@"
-        LANG= make "$TARGET" | grep -v '^make: .\+ is up to date.'
-        # TODO: print message if rebuild target 
-    done
-}
+# only install explicitly required modules
+alias cpanmissing='cpanm --skip-satisfied --installdeps .'
