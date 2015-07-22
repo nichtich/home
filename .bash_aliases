@@ -8,12 +8,14 @@ alias ..='cd ..'
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
+    alias ll='ls -l --color=auto'
     alias la='ls -lai --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 else
+    alias ll='ls -l'
     alias la='ls -la'
 fi
 
