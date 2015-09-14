@@ -4,24 +4,24 @@ set nocompatible
 set t_Co=256
 
 " enable vundle
-filetype on
 filetype off
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
-" Bundles
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
 
-Bundle 'bling/vim-airline'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+let g:pandoc#formatting#mode="A"
 
-Bundle 'vim-pandoc'
-let g:pandoc_no_folding = 1
-let g:pandoc_use_hard_wraps = 1
-
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_perl_lib_path="./lib,./local/lib/perl5"
 
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
+
+call vundle#end()
+
 
 set laststatus=2
 
