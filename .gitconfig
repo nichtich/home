@@ -22,6 +22,7 @@
     l = log --oneline 
     ls = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --date=short
     la = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --stat
+    pl = pull --rebase
 
     # show all commits and branches in a comprehensive overview (TODO: add author).
     graph = log --all --graph --oneline -n30
