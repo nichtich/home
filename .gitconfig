@@ -39,6 +39,8 @@
 
     # clone from a known user/repository at GitHub
     ghclone = "!sh -c \"git clone git@github.com:$1/$2.git $GIT_PREFIX$2\""
+    # clone branch from Debian Perl packages
+    perldebclone = "!sh -c \"git clone -b debian ssh://git.debian.org/git/pkg-perl/packages/$1.git\""
 
     # show all unpushed work
 	ok = "!sh -c \"git status --short; git log --branches --not --remotes --simplify-by-decoration --decorate --oneline; git stash list\""
