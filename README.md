@@ -6,10 +6,14 @@ I started to put my home directory under version control in 2011. See
 ```bash
 sudo apt-get install git
 git clone --bare https://github.com/nichtich/home.git .git
+cd .git
+ git config --bool core.bare false
+ git config --path core.worktree ~
+cd ..
 git checkout -f master
 git submodule update --init
-# start new shell
 vim +PluginInstall +qall
+# start new shell
 ```
 
 Vim plugins require texlive to be installed
