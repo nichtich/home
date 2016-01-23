@@ -99,6 +99,10 @@ if [ -f ~/bin/git-prompt.sh ]; then
 fi
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
+p() { 
+    perl -E "say do { $* }"
+}
+
 eval `dircolors ~/.dircolors`
 
 # enable programmable completion features (you don't need to enable
