@@ -130,6 +130,12 @@ if [ -x /usr/local/heroku/bin/heroku ]; then
     PATH="/usr/local/heroku/bin:$PATH"
 fi
 
+# go
+if [ -d "$HOME/.go" ]; then
+    export GOPATH="$HOME/.go"
+    PATH=$PATH:$GOPATH/bin
+fi
+
 # custom scripts
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
