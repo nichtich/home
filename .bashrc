@@ -110,8 +110,13 @@ eval `dircolors ~/.dircolors`
 # sources /etc/bash.bashrc).
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
+################################################################################
+# programming environments
+
 # enable perlbrew (Perl development) if it exists
-[ -f ~/perl5/perlbrew/etc/bashrc ] && . ~/perl5/perlbrew/etc/bashrc
+if [ -f ~/perl5/perlbrew/etc/bashrc ]
+    . ~/perl5/perlbrew/etc/bashrc
+fi
 
 # enable virtualenv (Python development) if it exists
 [ -f ~/.virtualenvs ] && export WORKON_HOME=~/.virtualenvs
@@ -125,16 +130,24 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
-# heroku toolbelt
-if [ -x /usr/local/heroku/bin/heroku ]; then
-    PATH="/usr/local/heroku/bin:$PATH"
-fi
-
 # go
 if [ -d "$HOME/.go" ]; then
     export GOPATH="$HOME/.go"
     PATH=$PATH:$GOPATH/bin
 fi
+
+# Android SDK
+if [ -d "$HOME/tools/android" ]; then
+    ANDROID_HOME=$HOME/tools/android/sdk
+    PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+fi
+
+# heroku toolbelt
+if [ -x /usr/local/heroku/bin/heroku ]; then
+    PATH="/usr/local/heroku/bin:$PATH"
+fi
+
+################################################################################
 
 # custom scripts
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
