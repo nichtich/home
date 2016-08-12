@@ -114,9 +114,7 @@ eval `dircolors ~/.dircolors`
 # programming environments
 
 # enable perlbrew (Perl development) if it exists
-if [ -f ~/perl5/perlbrew/etc/bashrc ]
-    . ~/perl5/perlbrew/etc/bashrc
-fi
+[ -f ~/perl5/perlbrew/etc/bashrc ] && . ~/perl5/perlbrew/etc/bashrc
 
 # enable virtualenv (Python development) if it exists
 [ -f ~/.virtualenvs ] && export WORKON_HOME=~/.virtualenvs
