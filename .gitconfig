@@ -22,15 +22,15 @@
     l = log --oneline 
     ls = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --date=short
     la = log --pretty=format:'%C(yellow)%h% %C(green) %ad%Cred%d %Creset%s %C(bold blue)%cn%C(reset)' --stat
+    
     pl = pull --rebase
+
+    pushtags = "!sh -c \"git push && git push --tags\""
 
     # show all commits and branches in a comprehensive overview (TODO: add author).
     graph = log --all --graph --oneline -n30
     
     g = log --all --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative
-
-    # always use word-diff
-    diff = diff --word-diff
 
     # add to the last commit without changing commit message
     amend = commit --amend --no-edit
@@ -48,6 +48,9 @@
 
     # show all unpushed work
 	ok = "!sh -c \"git status --short; git log --branches --not --remotes --simplify-by-decoration --decorate --oneline; git stash list\""
+
+    # character by character diff
+    cdiff = diff --word-diff-regex=.
 
 [diff]
     # enable copy detection
