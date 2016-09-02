@@ -21,3 +21,6 @@ fi
 
 # only install explicitly required modules
 alias cpanmissing='cpanm --skip-satisfied --installdeps .'
+
+# catmandu is too long to type
+alias cm=catmandu
