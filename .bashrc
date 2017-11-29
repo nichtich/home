@@ -99,9 +99,6 @@ if [ -f ~/bin/git-prompt.sh ]; then
 fi
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
-p() { 
-    perl -E "say do { $* }"
-}
 
 eval `dircolors ~/.dircolors`
 
@@ -144,6 +141,14 @@ fi
 if [ -x /usr/local/heroku/bin/heroku ]; then
     PATH="/usr/local/heroku/bin:$PATH"
 fi
+
+# PHP composer global
+if [ -x "$HOME/.composer/vendor/bin" ]; then
+    PATH="$HOME/.composer/vendor/bin:$PATH"
+fi
+
+# npm modules
+[ -d "$HOME/.npm/bin" ] && PATH="$HOME/.npm/bin:$PATH"
 
 ################################################################################
 

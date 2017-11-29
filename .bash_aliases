@@ -24,3 +24,8 @@ alias cpanmissing='cpanm --skip-satisfied --installdeps .'
 
 # catmandu is too long to type
 alias cm=catmandu
+
+# handy perl evaluator
+p() { 
+    perl -E "say do { $* }"
+}

@@ -32,6 +32,11 @@
     
     g = log --all --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative
 
+    # always use word-diff
+    diff = diff --word-diff
+
+    csvdiff = diff --word-diff-regex="[^[:space:],]+"
+
     # add to the last commit without changing commit message
     amend = commit --amend --no-edit
 
@@ -59,3 +64,6 @@
 
 [push]
 	default = simple
+[gitreview]
+	remote = origin
+	username = voj
