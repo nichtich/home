@@ -48,11 +48,14 @@ elseif has ('gui')          " On mac and Windows, use * register for copy-paste
 endif
 
 color flattened_dark
+
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
 
+" maintain undo history between sessions
+set undodir=~/.vim/undodir
 
 " Allow easy running of perltidy when editing a perl file, bound to 'Ctrl+t'
 :au Filetype perl nnoremap <C-t> :%!perltidy -q<CR>
