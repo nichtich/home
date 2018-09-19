@@ -12,7 +12,9 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'posva/vim-vue'
 let g:php_cs_fixer_path="~/.composer/vendor/bin/php-cs-fixer"
 let g:pandoc#formatting#mode="h"
 let g:pandoc#syntax#conceal#use=0
@@ -27,6 +29,17 @@ Plugin 'rking/ag.vim'
 Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
+
+" perl tidy when saving 
+function! PerlTidyAndResetCursor ()
+    let cursor_pos = getpos('.')
+    %!perltidy -q
+    call setpos('.', cursor_pos)
+endfunction
+augroup PerlTidy
+    autocmd!
+    autocmd BufWritePre,FileWritePre,FileAppendPre *.p[lm]  :call PerlTidyAndResetCursor()
+augroup END
 
 " navigate in visual lines
 "map <Up> g<Up>
