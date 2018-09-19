@@ -110,6 +110,8 @@ eval `dircolors ~/.dircolors`
 ################################################################################
 # programming environments
 
+[ -d "$HOME/.pandoc/bin" ] && PATH="$HOME/.pandoc/bin:$PATH"
+
 # enable perlbrew (Perl development) if it exists
 [ -f ~/perl5/perlbrew/etc/bashrc ] && . ~/perl5/perlbrew/etc/bashrc
 
