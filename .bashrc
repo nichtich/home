@@ -154,6 +154,9 @@ fi
 
 ################################################################################
 
+# pandoc executables
+[ -d "$HOME/.pandoc/bin" ] && PATH="$HOME/.pandoc/bin:$PATH"
+
 # custom scripts
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
