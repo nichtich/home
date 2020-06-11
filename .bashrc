@@ -124,7 +124,8 @@ eval `dircolors ~/.dircolors`
 
 # ruby as local user
 if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+    GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+    PATH="$GEM_HOME/bin:$PATH"
 fi
 
 # go
@@ -152,6 +153,9 @@ fi
 # npm modules
 [ -d "$HOME/.npm/bin" ] && PATH="$HOME/.npm/bin:$PATH"
 
+# Rust
+[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
+
 ################################################################################
 
 # pandoc executables
@@ -159,6 +163,14 @@ fi
 
 # custom scripts
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.bin/bin" ] && PATH="$HOME/.bin/bin:$PATH"
 
 export DEBEMAIL="jakob.voss@gbv.de"
 export DEBFULLNAME="Jakob Voß"
+
+# added by travis gem
+[ -f /home/voj/.travis/travis.sh ] && source /home/voj/.travis/travis.sh
+
+# use n to select/switch node version
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
