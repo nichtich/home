@@ -2,6 +2,7 @@
     excludesfile = "~/.gitignore"
     pager = less -r
     editor = vim
+    defaultBranch = main
 
 [user]
 	name = Jakob Voss
@@ -64,6 +65,10 @@
 
 [push]
 	default = simple
+
 [gitreview]
 	remote = origin
 	username = voj
+
+[github]
+	user = nichtich
