@@ -63,6 +63,12 @@ xterm*|rxvt*)
     ;;
 esac
 
+clearprompt() {
+  unset PROMPT_COMMAND
+  export PS1='\[\033[1;34m\]\$\[\033[00m\] '
+  clear
+}
+
 NO_COLOR="\[\033[00m\]"
 LIGHT_WHITE="\[\033[1;37m\]"
 WHITE="\[\033[0;37m\]"
@@ -151,7 +157,14 @@ if [ -x "$HOME/.composer/vendor/bin" ]; then
 fi
 
 # npm modules
-[ -d "$HOME/.npm/bin" ] && PATH="$HOME/.npm/bin:$PATH"
+# [ -d "$HOME/.npm/bin" ] && PATH="$HOME/.npm/bin:$PATH"
+
+# node version manager
+if [ -d "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Rust
 [ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
@@ -168,9 +181,4 @@ fi
 export DEBEMAIL="jakob.voss@gbv.de"
 export DEBFULLNAME="Jakob Voß"
 
-# added by travis gem
-[ -f /home/voj/.travis/travis.sh ] && source /home/voj/.travis/travis.sh
 
-# use n to select/switch node version
-export N_PREFIX=$HOME/.n
-export PATH=$N_PREFIX/bin:$PATH
