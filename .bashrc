@@ -113,6 +113,8 @@ eval `dircolors ~/.dircolors`
 # sources /etc/bash.bashrc).
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+
 ################################################################################
 # programming environments
 
