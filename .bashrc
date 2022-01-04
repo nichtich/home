@@ -124,7 +124,6 @@ eval `dircolors ~/.dircolors`
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
    . ~/perl5/perlbrew/etc/bashrc
 elif [ -d ~/perl5/lib/perl5 ]; then
-    echo "PERL"
    eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 fi
 
