@@ -2,6 +2,7 @@
 
 ## ignore selected directories
 /proj
+/snap
 
 ## expect selected directories
 !/.vim/
@@ -14,6 +15,7 @@
 /.Xauthority
 /.xsession-errors
 /.xsession-errors.old
+/.cache
 
 ### credentials
 /.ssh/

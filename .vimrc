@@ -70,10 +70,6 @@ set expandtab
 " maintain undo history between sessions
 set undodir=~/.vim/undodir
 
-" Allow easy running of perltidy when editing a perl file, bound to 'Ctrl+t'
-:au Filetype perl nnoremap <C-t> :%!perltidy -q<CR>
-:au Filetype perl vnoremap <C-t> <line1>,<line2>!perltidy -q<CR>
-
 " small intend for XML, XSLT, HTML, JSON
 :au Filetype xml setlocal ts=2 sw=2 sts=2 expandtab
 :au Filetype xslt setlocal ts=2 sw=2 sts=2 expandtab

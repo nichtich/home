@@ -175,6 +175,7 @@ fi
 
 # Rust
 [ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 ################################################################################
 
