@@ -74,7 +74,16 @@
 
 [github]
 	user = nichtich
+
 [pull]
 	rebase = true
+
+[diff "daff-csv"]
+	command = daff diff --git --output-format psv
+
+[merge "daff-csv"]
+	name = daff tabular csv merge
+	driver = daff merge --output %A %O %A %B
+
 [init]
 	defaultBranch = main
