@@ -134,6 +134,13 @@ fi
 # enable local Python if it exists
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
+# enable Pyenv, if it exists
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 # ruby as local user
 if which ruby >/dev/null && which gem >/dev/null; then
     GEM_HOME=$(ruby -e 'puts Gem.user_dir')
