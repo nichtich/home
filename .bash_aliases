@@ -7,6 +7,7 @@ alias ..='cd ..'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
+    alias l='ls --color -lhF --group-directories-first'
     alias ls='ls --color=auto'
     alias ll='ls -l --color=auto'
     alias la='ls -lai --color=auto'
@@ -15,6 +16,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 else
+    alias l='ls -lhF --group-directories-first'
     alias ll='ls -l'
     alias la='ls -la'
 fi
